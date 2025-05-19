@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layanan Kami</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #5a9610;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-img {
+      height: 70px;
+      transform: scale(1.4);
+      transform-origin: left center;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      padding-bottom: 4px;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #d0ffc4;
+      border-bottom: 3px solid #fff;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .service-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      text-align: center;
+      width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 15px;
+      animation: fadeIn 1s ease;
+    }
+
+    .service-card h3 {
+      color: #5a9610;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    footer {
+      background-color: #5a9610;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.95rem;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+      }
+
+      .header-left {
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <img src="img/logo.png" alt="Logo Cow's Milk" class="logo-img" />
+      <div class="logo-text">Cow's Milk</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Profil</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="layanan.html" class="active">Layanan</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="portofolio.html">Portofolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Layanan Kami</h2>
+    <div class="services">
+      <div class="service-card">
+        <img src="img/pengirim.jpg" alt="Pengiriman Susu" class="service-img" />
+        <h3>Pengiriman Susu Segar</h3>
+        <p>Kami mengantarkan susu segar langsung ke rumah Anda setiap hari dengan kualitas yang terjaga dan rasa alami.</p>
+      </div>
+      <div class="service-card">
+        <img src="img/susu layanan.jpg" alt="Susu Organik" class="service-img" />
+        <h3>Susu Organik Bersertifikat</h3>
+        <p>Diproduksi dari sapi organik terbaik. Bebas bahan kimia, aman untuk keluarga, dan ramah lingkungan.</p>
+      </div>
+      <div class="service-card">
+        <img src="img/peternak sapi.jpg" alt="Konsultasi Peternakan" class="service-img" />
+        <h3>Konsultasi Peternakan</h3>
+        <p>Tim ahli kami siap membantu Anda dalam merawat ternak dengan pendekatan edukatif dan dukungan langsung.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div>&copy; 2025 <strong>Cow's Milk</strong>. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>

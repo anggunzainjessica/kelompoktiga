@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produk Cow's Milk</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #1c1c1c;
+    }
+
+    header {
+      background-color: #5a9610;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100px;
+      position: relative;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-img {
+      height: 70px;
+      transform: scale(1.4);
+      transform-origin: left center;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      padding-bottom: 4px;
+    }
+
+    nav ul li a:hover {
+      color: #d0ffc4;
+    }
+
+    nav ul li a.active {
+      color: #d0ffc4;
+      border-bottom: 3px solid #fff;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card img:hover {
+      transform: scale(1.1);
+    }
+
+    .product-title {
+      font-size: 1.2rem;
+      color: #5a9610;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .price {
+      font-size: 1.1rem;
+      color: #8ac926;
+      margin-bottom: 15px;
+    }
+
+    .rating {
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    .add-to-cart {
+      background-color: #e9ed00;
+      color: #333;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background-color 0.3s;
+    }
+
+    .add-to-cart:hover {
+      background-color: #050404;
+    }
+
+    .cart-wrapper {
+      position: absolute;
+      top: 120px;
+      right: 30px;
+      font-size: 24px;
+      color: rgb(14, 12, 12);
+      cursor: pointer;
+    }
+
+    .popup-notif {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: white;
+      color: #000;
+      padding: 14px 22px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-left: 5px solid #5a9610;
+      z-index: 9999;
+      animation: slideIn 0.4s ease, fadeOut 0.5s ease 2.5s forwards;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(100%); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; transform: translateX(100%); }
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-3px); }
+      50% { transform: translateX(3px); }
+      75% { transform: translateX(-3px); }
+      100% { transform: translateX(0); }
+    }
+
+    .cart-icon.shake {
+      animation: shake 0.4s ease;
+    }
+
+    @media (max-width: 768px) {
+      .cart-wrapper {
+        top: 120px;
+        right: 15px;
+      }
+
+      .products-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product-card {
+        width: 80%;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+      }
+
+      .header-left {
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <img src="img/logo.png" alt="Logo Cow's Milk" class="logo-img" />
+      <div class="logo-text">Cow's Milk</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Profil</a></li>
+        <li><a href="produk.html" class="active">Produk</a></li>
+        <li><a href="layanan.html">Layanan</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="portofolio.html">Portofolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Keranjang berada di bawah header -->
+  <div class="cart-wrapper">
+    <div class="cart-icon">
+      🛒<span class="cart-count" id="cart-count">0</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <h2 style="text-align: center; margin-bottom: 30px;">Produk Kami</h2>
+
+    <div class="products-container">
+      <!-- Product Card 1 -->
+      <div class="product-card">
+        <img src="img/produk stroberi.png" alt="Susu Strawberry" />
+        <div class="product-title">Strawberry</div>
+        <div class="rating">★★★★★</div>
+        <div class="price">Rp.12.000</div>
+        <button class="add-to-cart">Tambah Keranjang</button>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="product-card">
+        <img src="img/produk coklat.png" alt="Susu Coklat" />
+        <div class="product-title">Coklat</div>
+        <div class="rating">★★★★☆</div>
+        <div class="price">Rp.10.000</div>
+        <button class="add-to-cart">Tambah Keranjang</button>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="product-card">
+        <img src="img/produk original.png" alt="Susu Murni" />
+        <div class="product-title">Murni</div>
+        <div class="rating">★★★★★</div>
+        <div class="price">Rp.15.000</div>
+        <button class="add-to-cart">Tambah Keranjang</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: #5a9610; color: white; text-align: center; padding: 20px; position: relative;">
+  <div>&copy; 2025 <strong>Cow's Milk</strong>. All rights reserved.</div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    let cartItemCount = 0;
+
+    function createNotification(message) {
+      const notif = document.createElement("div");
+      notif.className = "popup-notif";
+      notif.innerText = message;
+      document.body.appendChild(notif);
+
+      setTimeout(() => {
+        notif.remove();
+      }, 2500);
+    }
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", () => {
+        cartItemCount++;
+        const cartCountEl = document.getElementById("cart-count");
+        const cartIcon = document.querySelector(".cart-icon");
+
+        cartCountEl.innerText = cartItemCount;
+
+        // Efek shake
+        cartIcon.classList.add("shake");
+        setTimeout(() => {
+          cartIcon.classList.remove("shake");
+        }, 400);
+
+        createNotification("✅ Produk berhasil ditambahkan ke keranjang!");
+      });
+    });
+  </script>
+</body>
+</html>

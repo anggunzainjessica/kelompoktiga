@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil Cow's Milk</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #1c1c1c;
+    }
+
+    header {
+      background-color: #5a9610;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100px;
+      overflow: hidden;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-img {
+      height: 70px;
+      transform: scale(1.4);
+      transform-origin: left center;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo-text span {
+      color: #fff8c6;
+      font-weight: lighter;
+      font-size: 0.9rem;
+      margin-left: 6px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      padding-bottom: 4px;
+    }
+
+    nav ul li a:hover {
+      color: #d0ffc4;
+    }
+
+    nav ul li a.active {
+      color: #d0ffc4;
+      border-bottom: 3px solid #fff;
+      font-weight: bold;
+    }
+
+    .hero-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 60px 30px 0;
+      background-color: #222;
+      color: white;
+      position: relative;
+      min-height: 90vh;
+    }
+
+    .hero-left {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+      padding: 20px;
+      z-index: 1;
+    }
+
+    .hero-left h1 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      color: #d0ffc4;
+    }
+
+    .hero-left p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      background-color: #5a9610;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #477d0c;
+    }
+
+    .hero-right {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 0 20px 0 20px;
+      position: relative;
+    }
+
+   
+    .hero-right img {
+      width: 200%;
+      max-width: 650px;
+      height: auto;
+      margin: 0;
+      object-fit: cover;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #5a9610;
+      color: white;
+      position: relative;
+      z-index: 2;
+    }
+
+    .social-media a {
+      color: white;
+      margin: 0 12px;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero-left, .hero-right {
+        padding: 10px;
+        justify-content: center;
+      }
+
+      .hero-right img {
+        width: 90%;
+        margin-top: 20px;
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <img src="img/logo.png" alt="Logo Cow's Milk" class="logo-img" />
+      <div class="logo-text">
+        Cow's Milk
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html" class="active">Profil</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="layanan.html">Layanan</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="portofolio.html">Portofolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-left">
+      <h1>Sekilas Tentang Cow's Milk</h1>
+      <p>Cow's Milk adalah usaha peternakan sapi perah keluarga yang menyediakan susu segar berkualitas, dikelola oleh tim keluarga yang berdedikasi penuh terhadap kesejahteraan hewan dan kualitas hasil ternak.</p>
+      <a href="kontak.html" class="cta-button">Selengkapnya</a>
+    </div>
+    <div class="hero-right">
+      <img src="img/ownereee.png" alt="Peternakan Cow's Milk" />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>&copy; 2025 <strong>Cow's Milk</strong>. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
